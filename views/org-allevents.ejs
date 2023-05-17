@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <title>Home-page</title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+    <!-- navigationbar -->
+    <%- include('./partials/org-nav.ejs') %>
+      <!--	end of nav  -->
+
+      <!-- Form to update -->
+      <% for (let i=0; i < oev.length;i++){ %>
+        <div class="container org-updatetable" id="<%- oev[i].eventid %>">
+
+          <form action="/org/upevent" method="post" id="form" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="pname">Programme</label>
+                <input name="programme" type="text" class="form-control" id="pname" value="<%- oev[i].programme %>"
+                  required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="cat">Catogery</label>
+                <select name="catogery" id="cat" class="form-control" required>
+                  <option <%=oev[i].catogery=='Cultural' ? 'selected' :'' %> >Cultural</option>
+                  <option <%=oev[i].catogery=='Technical' ? 'selected' :'' %> >Technical</option>
+                  <option <%=oev[i].catogery=='Sports' ? 'selected' :'' %> >Sports</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="events">Event</label>
+                <input name="events" type="text" class="form-control" id="events" placeholder="events"
+                  value="<%- oev[i].events %>" required>
+                <small class="form-text text-muted">Use comma to seperate between events.</small>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="contact">Contact</label>
+                <input name="contact" type="number" class="form-control" id="contact" pattern="[0-9]{10}"
+                  placeholder="Mobile" value="<%- oev[i].contact %>" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="rewards">Rewards</label>
+                <input name="rewards" type="text" class="form-control" id="rewards" value="<%- oev[i].rewards %>">
+              </div>
+              <div class="form-group col-md-3" style="display: none;">
+                <label for="orgid">org-id</label>
+                <input name="orgid" type="number" class="form-control" id="orgid" placeholder="{1-3}.{1-9}.{series}"
+                  value="<%- oev[i].orgid %>" required>
+              </div>
+              <div class="form-group col-md-3" style="display: none;">
+                <label for="eventid">Event id</label>
+                <input name="eventid" type="number" class="form-control" id="eventid" placeholder="{orgid}.{evenumber}"
+                  value="<%- oev[i].eventid %>" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="loc">Location</label>
+                <input name="loc" type="text" class="form-control" id="loc" placeholder="block / landmark"
+                  value="<%- oev[i].loc %>" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="rno">Room no.</label>
+                <input name="rno" type="number" class="form-control" id="rno" value="<%- oev[i].rno %>"
+                  placeholder="room no.">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="date">Event Date:</label>
+                <input name="date" type="date" class="form-control" id="date"
+                  value="<%- oev[i].date.toLocaleDateString(); %>" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="time">Event Time:</label>
+                <input type="time" class="form-control" id="time" name="time" value="<%- oev[i].time %>" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="des">Description</label>
+                <input name="des" type="text" class="form-control" id="des" value="<%- oev[i].des %>">
+              </div>
+              <div class="custom-file col-md-6">
+                <label class="custom-file-label poster" for="poster">Poster</label>
+                <input name="poster" type="file" class="custom-file-input" id="poster" accept="image/*">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Done</button>
+          </form>
+        </div>
+        <% } %>
+          <!-- end of form -->
+
+
+          <div class="container events-planned">
+            <div class="row ">
+              <h2 class="heading"> Events Planned You</h2>
+            </div>
+            
+              <!-- Table -->
+            <div class="row org-table">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Event id</th>
+                    <th scope="col">Programme</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <% for(let i=0;i<oev.length;i++){ %>
+                  <tbody>
+                    <tr id="<%= oev[i].eventid+oev[i].orgid %>">
+                      <th scope="row"><%- oev[i].eventid %></th>
+                      <td><%- oev[i].programme %></td>
+                      <td><%- oev[i].date.toLocaleDateString(); %></td>
+                      <td><%- oev[i].time %></td>
+                      <td><button class="btn btn-warning btn-sm" onclick="toggleElement('<%- oev[i].eventid %>')">  update   
+                        </button> </td>
+                      <form method="post" action="/org/delete" style="display: inline;">
+                        <label for = 'eventid' style="display: none;">eventid</label>
+                        <input name = "eventid" id="eventid" type=" number" value="<%- oev[i].eventid%>" style="display: none;">
+                        <td><button class="btn btn-danger btn-sm" onclick="hide('<%= oev[i].eventid + oev[i].orgid %>')">delete</button></td>
+                      </form>
+                    </tr>
+                  </tbody>
+                  <% } %>
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- modals -->
+
+          <%- include('./partials/org-modal.ejs') %>
+
+              <!-- cards -->
+            <div class="container cardsholder" >
+              <h1 class="mainheading">Upcomming Events</h1>
+              <% for (let j=0; j<result.length; j++){ %>
+                <% let count = 0; let inrow = 0; %>
+                <% if(j==0 || (j>0 && result[j-1].orgname != result[j].orgname)){ %>
+                  <h2 class="col-12"><%- result[j].orgname %></h2>
+                
+                  <%  count = 0 } %>
+                  <% count++; %>
+                  <!-- <% if(j==0  || (j>0 && result[j-1].orgname != result[j].orgname) ) { %> -->
+                      <div class="row cards">
+                        <!-- <% inrow = 0 } %> -->
+                        <% inrow++; %>
+                          <div class="eventcard col-md-5" >
+                            <div class="row">
+                              <div class="col-4">
+                                <img class="img-fluid" src="/uploads/<%- result[j].poster %>">
+                              </div>
+                              <div class="col-8 text">
+                                <p><b>Title : </b><%- result[j].programme %></p>
+                                <p><b>Events : </b><%- result[j].events %></p>
+                                <p><b>Venue : </b><%- result[j].loc %></p>
+                                <p><b>Date : </b><%- result[j].date.toLocaleDateString() %></p>
+                                <p><b>Time : </b><%- result[j].time %></p>
+                                <p><b>Description: </b><%- result[j].des %></p>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <% if(j>0 && ( result[j-1].orgname != result[j].orgname && inrow%2 == 0)  ) { %> -->
+                      </div>
+                      <!-- <%} %> -->
+                        <% } %>
+            </div>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+              crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+              integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+              crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+              integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+              crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+              integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+              crossorigin="anonymous"></script>
+
+            <script>
+
+              function toggleElement(iden) {
+                var element = document.getElementById(iden);
+                if (element.style.display === "none") {
+                  element.style.display = "block";
+                  const formElement = document.getElementById("form");
+                  formElement.scrollIntoView();
+                } else {
+                  element.style.display = "none";
+                }
+              }
+              function hide (id_of_row){
+                var ele = document.getElementById(id_of_row);
+                // console.log(ele);
+                ele.style.display = "none";
+              }
+            </script>
+
+</body>
+
+</html>

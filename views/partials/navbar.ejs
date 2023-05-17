@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid navigativebar">
+    <a class="navbar-brand" href="#">Event Manager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+      aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#about">About us</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            All Events
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="/events">Techno</a></li>
+            <li><a class="dropdown-item" href="/events#cultural">Cultural</a></li>
+            <li><a class="dropdown-item" href="/events#sports">Sports</a></li>
+          </ul>
+        </li>
+
+
+
+      </ul>
+    </div>
+  
+
+  <button type="button" class="btn btn-outline-info manbtn" data-toggle="modal" data-target="#org-modal">
+    Organize
+  </button>
+  <button type="button" class="btn btn-sm btn-outline-success manbtn" data-toggle="modal"
+    data-target="#user-modal">Signin</button>
+  <button type="button" class="btn btn-sm btn-outline-success manbtn" data-toggle="modal"
+    data-target="#reg-modal">Signup</button>
+  </div>
+</nav>

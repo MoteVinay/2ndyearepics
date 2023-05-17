@@ -1,0 +1,69 @@
+<div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Thanks for ur intrest</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Fill up the form to register
+            </p>
+            <form action="/usersignup" method="post">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input name="username" type="text" class="form-control" id="username" required>
+                
+                <label for="password">password</label>
+                
+                <input name="password" type="password" class="form-control" id="vin" pattern="(?=.*\d)(?=.*[a-z])(?=.*[#?!@$%^&*])(?=.*[A-Z]).{8,}"   required>
+                
+                <button type="button" class="btn btn-light" id="togglePassword">show</button>
+                <small id="emailHelp" class="form-text text-muted" >include [A-Z] [a-z][0-9] use special charecter
+                </small>
+                <label for="mail">college mail</label>
+                <input name="mail" type="mail" class="form-control" id="mail"  required>
+                <small id="emailHelp" class="form-text text-muted">only college mail id's
+                  </small>
+                <label for="mobile"></label>mobile</label>
+                <input name="mobile" type="number" class="form-control" id="mobile"  required>
+                <label for="year">Year</label>
+                <select name="year" class="form-control" id="year">
+                  <option value="1">1st</option>
+                  <option value="2">2nd</option>
+                  <option value="3">3rd</option>
+                  <option value="4">4th</option>
+                </select>
+                <button type="submit" class="btn btn-success" style="margin-top: 10px;" data-toggle="modal"
+                  >Register</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var passwordInput = document.getElementById("vin");
+		var toggleButton = document.getElementById("togglePassword");
+
+		toggleButton.addEventListener("click", function() {
+
+			if (passwordInput.type == "password") {
+				passwordInput.setAttribute("type" , "text");
+				toggleButton.textContent = "Hide";
+        
+			} else {
+				passwordInput.setAttribute("type" ,"password");
+				toggleButton.textContent = "Show";
+			}
+		});
+  </script>

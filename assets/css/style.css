@@ -1,0 +1,351 @@
+/*Header*/
+.Header-img{
+    max-height: 150px;
+    float: right;
+}
+.Header{
+    background-color: #f2f2f2;
+}
+.Header-text{
+    margin-top: 15px;
+    color: #0000b3;
+}
+@media screen and (max-width: 768px){
+    .Header-img{
+        display: none;
+    }
+    .Header span{
+        display: none;
+    }
+}
+
+/*navbar*/
+
+.nav{
+	background-color: #2f2f2f;
+}
+.sign-out{
+    /* float:left; */
+    display: inline-flex;
+    justify-content: end;
+}
+.nav-item:hover{
+	background-color: #4d4d4d;
+	border-radius: 5%
+}
+
+.dropdown-menu .dropdown-item:hover{
+	background-color: #0000ff;
+	color: #f2f2f2;
+}
+
+.manbtn{
+    color: whitesmoke;
+   margin: 2px;
+    
+}
+
+body{
+    background:#EEE9DA;
+}
+
+.slider{
+    box-shadow: 0px 1px 5px #000000;
+}
+
+.impact{
+    margin-top: 50px;
+    margin-bottom: 25px;
+    justify-content: space-around;
+    align-items: center;
+    /* display:flex; */
+    flex-direction: row;
+    
+    border-radius: 5px;
+}
+.box{
+    background: whitesmoke; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px #000000;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+.box h4 {
+    text-align: center; 
+}
+.images{
+    margin: auto;
+    /* justify-self: center; */
+    justify-content: space-around;
+}
+.box img{
+    /* margin-bottom:10px; */
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgb(255, 0, 0);
+    max-height: 100px;
+    width: auto;
+}
+
+
+.why{
+    justify-content: space-around;
+}
+
+.why h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background:#E4D0D0 ;
+    padding: 5px;
+    width:100%;
+    border-radius: 3px;;
+    text-shadow: 0px 0px 1px #16cade;
+    text-align: center;
+    box-shadow: 0px 0px 2px #000000;
+}
+.why p{
+    background: #F5EBEB;
+    border-radius:3px;
+    padding: 5px;
+    box-shadow: 0px 0px 2px #4d4d4d;
+}
+
+.about{
+    background: #E9EDC9;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+    box-shadow: 0px 0px 2px white;  
+    
+}
+.about h3{
+    text-shadow: 0px 0px 1px rgb(241, 34, 34);
+}
+
+
+/* org-dashboard */
+
+.org-dashboard{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #AEC2B6;
+    border-radius:10px;
+    background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+}
+
+.org-updatetable{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #AEC2B6;
+    border-radius:10px;
+    background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+    display: none;
+}
+
+.poster{
+    margin-top: 30px;
+}
+.events-planned{
+    background-color: #607976;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+.events-planned .heading{
+    font-family: Times New Roman;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: whitesmoke;
+    text-shadow: 0px 0px 0.5px white;
+}
+.org-table table th {
+    color: ghostwhite;
+    text-shadow: 0px 0px 0.3px black;
+}
+.org-table table td {
+    color: whitesmoke;
+}
+
+.cardsholder{
+    margin-top: 20px;
+}
+
+.cardsholder h1{
+    text-align: center;
+    
+}
+.cardsholder h2{
+    justify-self: center;
+    margin-top: 15px;
+    text-align: center;
+}
+.cardsholder H2 img{
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #000000;
+}
+
+.heading{
+    font-family: Times New Roman;
+    margin:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000000;
+    text-shadow: 0px 0px 0.5px white;
+}
+
+.user{
+    margin-top:10px;
+    background-image: url(images/heading.jpg);
+    /* filter:opacity(25%); */
+    border-radius: 10px;
+    color: #322e30;
+    background-size: cover;
+    opacity: 0.75;
+    padding:10px;
+}
+.user .heading{
+    margin: auto;
+    color: #000000;
+    opacity: 1;
+}
+.user-table{
+    margin-top: 20px;
+    background-image: url(images/table.jpg);
+    border-radius: 10px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.enrollmentstable{
+    margin-bottom : 0px;
+}
+
+.event-thumbnail{
+    background-color: #E8D2A6;
+    border-radius: 5px;
+    padding: 8px;
+    max-height: 320px;
+    margin-bottom: 20px;
+}
+.event-thumbnail img{
+    max-height: 289px;
+    /* margin:0px */
+}
+.title{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.ans{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sponsers h2{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-bottom: 30px;
+    text-shadow: 0px 0px 1px #ff0000;
+}
+
+.sponsers{
+    background:#EDF1D6;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px #83e78b;
+}
+.sponsers img{
+    max-height: 250px;
+    width: auto;
+}
+
+.technical h2{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 2px #f58249;
+}
+.slider img{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.slider-text {
+    color: #000000;
+    background-color: rgb(255,255,255,0.5);
+    border-radius: 10px;
+}
+
+.upcoming{
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.cards{
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+.eventcard{
+    background-color: #2e2921;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.eventcard:hover{
+transform: scale(1.09);
+}
+.eventcard img{
+    margin:auto;
+    background-color: white;
+    position: relative;
+    /* margin-top: 5px; */
+    /* padding-top: 2px; */
+    height: 100%;
+    width:100%;
+    float:left;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px white;
+    
+}
+.eventcard .text{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.eventcard .text p{
+    margin:3px;
+    color: white;
+}
+.eventcard .text p b{
+    text-shadow: 0px 0px 1px rgb(18, 18, 18);
+}
+.link{
+    /* text-align: center; */
+    padding: 3px;
+    background-color: wheat;
+    max-height: 30px;
+    margin:10px;
+    border-radius: 3px;
+    justify-content: space-around;
+    align-content: center;
+    
+}
+.link a{
+    /* text-align: center; */
+    color: #000000;
+    text-shadow: 2px 2px 5px white;
+}

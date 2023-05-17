@@ -1,0 +1,50 @@
+<div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Welcome</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="/usersignin" method="post">
+        <div class="form-group">
+          <label for="mail">Student mail</label>
+          <input name="mail" type="email" class="form-control" id="mail" aria-describedby="Username" pattern="(?=.*\d).{@student.nitandhra.ac.in}"
+            placeholder="Enter student mail" requried>
+          
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="user-pass-in" placeholder="Password" requried>
+          <button type="button" class="col-2 btn btn-light" id="user-pass-btn">Show</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  var pass = document.getElementById("user-pass-in");
+  var orgButton = document.getElementById("user-pass-btn");
+
+  orgButton.addEventListener("click", function() {
+
+    if (pass.type == "password") {
+      pass.setAttribute("type" , "text");
+      orgButton.textContent = "Hide";
+      
+    } else {
+      pass.setAttribute("type" ,"password");
+      orgButton.textContent = "Show";
+    }
+  });
+</script>
