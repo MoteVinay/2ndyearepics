@@ -30,14 +30,6 @@ This is a basic-level web application designed to provide hands-on experience wi
 4. **Candidate Count:**
    - Organizers can view the number of candidates interested in each program or event.
 
-## Demo
-
-A live demo of the application can be accessed at [Demo Link](https://www.example.com) in no time.
-
-Feel free to explore the functionalities and experience the event management system.
-
-For any issues or suggestions, please feel free to raise an issue on the repository.
-
 ## How to Run Locally
 
 1. Clone the repository to your local machine.
