@@ -1,62 +1,124 @@
-# College Events Management System
+# 🎓 College Events Management System 🎉
 
-This is a basic-level web application designed to provide hands-on experience with various web technologies and frameworks, including HTML, CSS, Bootstrap, NodeJS, JavaScript, and MySQL. The application consists of two main panels: one for users and the other for organizers.
-
-## Technologies Used
-
-**FrontEnd:**
-1. CSS
-2. Bootstrap
-
-**BackEnd:**
-1. JavaScript
-2. MySQL
-
-**Frameworks:**
-- NodeJS (ExpressJS, Multer, EJS)
-
-## Functionalities
-
-1. **User Registration:**
-   - New users can enroll and create accounts to access the platform.
-
-2. **Event Scheduling:**
-   - Organizers have the capability to schedule events using a user-friendly form.
-
-3. **Event Browsing and Registration:**
-   - Users can explore all the events organized by various associations and clubs within the college.
-   - They can register and express their interest in participating in specific events.
-
-4. **Candidate Count:**
-   - Organizers can view the number of candidates interested in each program or event.
-
-## How to Run Locally
-
-1. Clone the repository to your local machine.
-2. Install NodeJS and MySQL if not already installed.
-3. Set up the database using the provided SQL files.
-4. Install dependencies using `npm install`.
-5. Start the server using `npm start`.
-6. Access the application in your browser at `http://localhost:3000`.
-
-## Contributing
-
-Contributions are welcome! If you'd like to improve the application or add new features, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m "Add feature"`.
-4. Push the branch: `git push origin feature-name`.
-5. Submit a pull request.
-
-Let's collaborate to make this College Events Management System even better!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it as per your needs.
+Welcome to the **College Events Management System** – a beginner-friendly full-stack web app that simplifies how students and organizers interact with campus events! Whether you're eager to attend hackathons or looking to host a cultural fest, this system empowers both ends!
 
 ---
 
-Thank you for visiting the repository and showing interest in the College Events Management System! If you find it helpful, don't forget to ⭐ the project. If you have any questions or feedback, please don't hesitate to reach out.
+## 🚀 Technologies Used
+
+### 🖥️ Frontend:
+
+- HTML & CSS
+- [Bootstrap](https://getbootstrap.com/) – for sleek, responsive UI
+- [EJS](https://ejs.co/) – Embedded JavaScript templating
+
+### 🔧 Backend:
+
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- PostgreSQL (hosted on [Supabase](https://supabase.com/))
+
+---
+
+## ✨ Features
+
+### 👥 User Panel:
+
+- **User Registration & Login:**  
+  Students can sign up and securely log in.
+- **Event Browsing:**  
+  Discover events by category – Technical, Cultural, or Sports.
+
+- **Enrollment:**  
+  Register for events with a click and track your enrollments.
+
+### 🧑‍💼 Organizer Panel:
+
+- **Event Scheduling:**  
+  Organizers can create new events and upload posters.
+
+- **Enrollment Tracking:**  
+  See how many participants signed up for each event.
+
+---
+
+## 🛠️ How to Run Locally
+
+Follow these steps to set up and run the project on your machine:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/college-events-management.git
+cd college-events-management
+```
+
+### 2. 💻 Install Node.js
+
+Download and install the LTS version of Node.js from the official website:
+
+👉 https://nodejs.org/
+
+To verify that Node.js and npm are installed, run:
+
+```bash
+node -v
+npm -v
+```
+
+### 3. 📦 Install Dependencies
+
+After cloning the repo, install the required packages:
+
+```bash
+npm install
+```
+
+### 4. 🔐 Set Up Supabase
+
+Create a free Supabase project at https://supabase.com
+
+Go to your project → Settings → Database
+
+Copy your credentials and create a .env file in the root folder:
+
+```bash
+DB_HOST=your-project.supabase.co
+DB_USER=your-db-username
+DB_PASSWORD=your-db-password
+DB_NAME=postgres
+DB_PORT=5432
+```
+
+⚠️ NOTE: Never commit the .env file to GitHub or share it publicly.
+
+### 5. 🗃️ Set Up the Database
+
+You can set up your PostgreSQL tables using:
+
+Supabase SQL Editor (paste your schema there), or
+
+Run the schema setup file if included:
+
+```bash
+
+node SchemaSetUp.js
+```
+
+Make sure your PostgreSQL schema is applied before launching the app.
+
+### 6. ▶️ Start the Server
+
+Once everything is ready, start the app:
+
+```bash
+node index.js
+```
+
+The server will start on:
+
+```bash
+http://localhost:3000
+```
 
 Happy coding! 🚀
