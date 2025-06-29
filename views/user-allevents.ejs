@@ -85,7 +85,7 @@
 <% let b = 0; %>
 <% for (let j = 0; j < enrol.length; j++){ %>
   <% if(enrol[j].eventid == tec[i].eventid){ %>
-    <% console.log(enrol[j].eventid) %>
+    <!-- <% console.log(enrol[j].eventid) %> -->
     <% b = 1; %>
     <div class="row link">
       <form action="/user/<%- id %>/cancel" method="post" id="<%-tec[i].eventid%>">
@@ -100,7 +100,7 @@
   <% break;} %>
 <% } %>
 <% if(b == 0){ %>
-  <% console.log( tec[i].eventid) %>
+  <!-- <% console.log( tec[i].eventid) %> -->
   <div class="row link">
     <form action="/user/<%- id %>/register" method="post" id="<%-tec[i].eventid%>">
       <input style="display: none;" name="userid" type="number" class="form-control"
@@ -187,7 +187,7 @@
                               <% let b = 0; %>
                               <% for (let j = 0; j < enrol.length; j++){ %>
                                 <% if(enrol[j].eventid == cul[i].eventid){ %>
-                                  <% console.log(enrol[j].eventid) %>
+                                  <!-- <% console.log(enrol[j].eventid) %> -->
                                   <% b = 1; %>
                                   <div class="row link">
                                     <form action="/user/<%- id %>/cancel" method="post" id="<%-cul[i].eventid%>">
@@ -202,7 +202,7 @@
                                 <% break;} %>
                               <% } %>
                               <% if(b == 0){ %>
-                                <% console.log( cul[i].eventid) %>
+                                <!-- <% console.log( cul[i].eventid) %> -->
                                 <div class="row link">
                                   <form action="/user/<%- id %>/register" method="post" id="<%-cul[i].eventid%>">
                                     <input style="display: none;" name="userid" type="number" class="form-control"
@@ -287,7 +287,7 @@
 <% let b = 0; %>
 <% for (let j = 0; j < enrol.length; j++){ %>
   <% if(enrol[j].eventid == spo[i].eventid){ %>
-    <% console.log(enrol[j].eventid) %>
+    <!-- <% console.log(enrol[j].eventid) %> -->
     <% b = 1; %>
     <div class="row link">
       <form action="/user/<%- id %>/cancel" method="post" id="<%-spo[i].eventid%>">
@@ -302,7 +302,7 @@
   <% break;} %>
 <% } %>
 <% if(b == 0){ %>
-  <% console.log( spo[i].eventid) %>
+  <!-- <% console.log( spo[i].eventid) %> -->
   <div class="row link">
     <form action="/user/<%- id %>/register" method="post" id="<%-spo[i].eventid%>">
       <input style="display: none;" name="userid" type="number" class="form-control"
@@ -417,7 +417,7 @@
         for (let i = 0; i < tec.length; i++) {
           for (let j = 0; j < enrol.length; j++) {
             if (enrol[j].eventid == tec[i].eventid) {
-              console.log("exe");
+              // console.log("exe");
               var id = tec[i].eventid;
               var card = document.getElementById("<%- id %>");
               card.elements["status"].value = "cancel";
