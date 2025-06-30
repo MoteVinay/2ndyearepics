@@ -2,6 +2,8 @@
 
 Welcome to the **College Events Management System** – a beginner-friendly full-stack web app that simplifies how students and organizers interact with campus events! Whether you're eager to attend hackathons or looking to host a cultural fest, this system empowers both ends!
 
+Here is a link for a demo of execution https://youtu.be/5euh2QIgCWc
+
 ---
 
 ## 🚀 Technologies Used
